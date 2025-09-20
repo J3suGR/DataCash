@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    android:background="#FFF8E1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pago de Servicios"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#E65100"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnLuz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar Luz"
+        android:backgroundTint="#FFB300"
+        android:textColor="#FFF"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnAgua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar Agua"
+        android:backgroundTint="#0288D1"
+        android:textColor="#FFF"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar Internet"
+        android:backgroundTint="#43A047"
+        android:textColor="#FFF"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pagar Teléfono"
+        android:backgroundTint="#7B1FA2"
+        android:textColor="#FFF"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnOtrosServicios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Otros Servicios"
+        android:backgroundTint="#E64A19"
+        android:textColor="#FFF"/>
+
+</LinearLayout>

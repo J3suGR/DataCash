@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- ScrollView para permitir desplazamiento -->
+    <android.widget.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Cálculo del Área del Triángulo -->
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Base" />
+
+            <EditText
+                android:id="@+id/txtBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Altura" />
+
+            <EditText
+                android:id="@+id/txtAltura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnCalcularTriangulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="calcularAreaTriangulo"
+                android:text="Calcular Triángulo" />
+
+            <EditText
+                android:id="@+id/txtAreaTriangulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <!-- Cálculo del Tronco de Cono -->
+            <TextView
+                android:id="@+id/textRadioSuperior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Radio Superior" />
+
+            <EditText
+                android:id="@+id/txtRadioSuperior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textRadioInferior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Radio Inferior" />
+
+            <EditText
+                android:id="@+id/txtRadioInferior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textAlturaCono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Altura" />
+
+            <EditText
+                android:id="@+id/txtAlturaCono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textGeneratriz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Generatriz" />
+
+            <EditText
+                android:id="@+id/txtGeneratriz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnCalcularCono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="calcularAreaCono"
+                android:text="Calcular Tronco de Cono" />
+
+            <EditText
+                android:id="@+id/txtAreaLateral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtAreaTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtVolumen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <!-- Cálculo del Área del Cubo -->
+            <TextView
+                android:id="@+id/textCubo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Lado del Cubo" />
+
+            <EditText
+                android:id="@+id/txtLadoCubo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnCalcularCubo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="calcularAreaCubo"
+                android:text="Calcular Área del Cubo" />
+
+            <EditText
+                android:id="@+id/txtAreaCubo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <!-- Cálculo del Área del Ortoedro -->
+            <TextView
+                android:id="@+id/textOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Largo, Ancho y Alto del Ortoedro" />
+
+            <EditText
+                android:id="@+id/txtLargoOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtAnchoOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtAltoOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnCalcularOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="calcularAreaOrtoedro"
+                android:text="Calcular Área del Ortoedro" />
+
+            <EditText
+                android:id="@+id/txtAreaOrtoedro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="text" />
+        </LinearLayout>
+    </android.widget.ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

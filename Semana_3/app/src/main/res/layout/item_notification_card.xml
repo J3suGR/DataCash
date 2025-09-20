@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título de la notificación -->
+        <TextView
+            android:id="@+id/notificationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título"
+            android:textSize="16sp"
+            android:textColor="#2C3E50"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Mensaje de la notificación -->
+        <TextView
+            android:id="@+id/notificationMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensaje de la notificación"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginTop="4dp" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/notificationDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01/09/2025"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

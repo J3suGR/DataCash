@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8E9">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tienda"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#33691E"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnGiftCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comprar Gift Cards"
+            android:backgroundTint="#558B2F"
+            android:textColor="#FFF"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnRecargasCelulares"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recargas Celulares"
+            android:backgroundTint="#689F38"
+            android:textColor="#FFF"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnSuscripciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suscripciones (Netflix, Spotify...)"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFF"/>
+
+    </LinearLayout>
+</ScrollView>

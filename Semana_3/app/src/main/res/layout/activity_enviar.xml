@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/enviarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vibrant_dashboard_bg">
+
+    <!-- Guías -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="24dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="24dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="24dp"
+        android:orientation="horizontal" />
+
+    <!-- Encabezado -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_arrow_back"
+        android:background="@drawable/notification_button_bg"
+        android:elevation="4dp"
+        app:tint="#8D9BAB"
+        android:contentDescription="Volver"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar Dinero"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#2C3E50"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="@id/backButton"
+        app:layout_constraintBottom_toBottomOf="@id/backButton" />
+
+    <!-- Número -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número de destino"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Monto -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/phoneInputLayout"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/amountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Monto a enviar"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nota -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/noteInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/amountInputLayout"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/noteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Añadir una nota (opcional)"
+            android:inputType="textCapSentences"
+            android:minLines="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón Continuar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Continuar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:paddingVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@id/noteInputLayout"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:cornerRadius="24dp"
+        app:backgroundTint="#42A5F5"
+        android:elevation="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

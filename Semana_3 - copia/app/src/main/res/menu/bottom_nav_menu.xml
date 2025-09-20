@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_servicios"
+        android:icon="@drawable/ic_service"
+        android:title="Servicios" />
+    <item
+        android:id="@+id/nav_tienda"
+        android:icon="@drawable/ic_store"
+        android:title="Tienda" />
+</menu>

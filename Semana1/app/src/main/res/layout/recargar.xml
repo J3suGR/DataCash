@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FAFAFA">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloRecargar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Recargar saldo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#0D47A1"
+        android:padding="12dp"
+        android:background="#BBDEFB" />
+
+    <!-- Saldo actual -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginTop="16dp"
+        android:background="#E3F2FD"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvSaldoActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu saldo actual es:"
+            android:textSize="16sp"
+            android:textColor="#37474F" />
+
+        <TextView
+            android:id="@+id/tvMontoSaldoActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S/ 1,250.00"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Selección de monto -->
+    <TextView
+        android:id="@+id/tvMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona un monto rápido:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:layout_marginTop="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnMonto20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="S/ 20"
+            android:background="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnMonto50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="S/ 50"
+            android:background="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnMonto100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="S/ 100"
+            android:background="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_margin="4dp" />
+    </LinearLayout>
+
+    <!-- Métodos de pago -->
+    <TextView
+        android:id="@+id/tvMetodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige un método de pago:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/btnTarjeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💳 Tarjeta"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnBanco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🏦 Cuenta Bancaria"
+        android:background="#673AB7"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnYape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📱 Yape/Plin"
+        android:background="#FF9800"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón Confirmar -->
+    <Button
+        android:id="@+id/btnConfirmarRecarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✅ Confirmar Recarga"
+        android:background="#1B5E20"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>

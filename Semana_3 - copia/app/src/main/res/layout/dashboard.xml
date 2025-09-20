@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboardLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vibrant_dashboard_bg"
+    tools:context=".DashboardActivity">
+
+    <!-- Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <!-- Usuario y saludo -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_user_avatar"
+        android:elevation="4dp"
+        android:contentDescription="Avatar de usuario"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:shapeAppearanceOverlay="@style/CircularImageView"
+        app:strokeWidth="2dp"
+        app:strokeColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hola, Juan"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#2C3E50"
+        app:layout_constraintStart_toEndOf="@id/userAvatar"
+        app:layout_constraintTop_toTopOf="@id/userAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/userAvatar"
+        android:layout_marginStart="16dp" />
+
+    <!-- Botón de notificaciones -->
+    <ImageButton
+        android:id="@+id/notificationsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_bell"
+        android:background="@drawable/notification_button_bg"
+        android:elevation="4dp"
+        app:tint="#8D9BAB"
+        android:contentDescription="Notificaciones"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="@id/userAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/userAvatar" />
+
+    <!-- Card de saldo -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/saldoCard"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
+        app:layout_constraintTop_toBottomOf="@id/userAvatar"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="32dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_blue_teal"
+            android:padding="28dp">
+
+            <TextView
+                android:id="@+id/saldoTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo Disponible"
+                android:textColor="#E0F7FA"
+                android:alpha="0.9"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/saldoMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/saldoTitulo"
+                android:text="S/ 2,500.00"
+                android:textColor="#FFFFFF"
+                android:textSize="42sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/eyeIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_visibility"
+                app:tint="#E0F7FA"
+                android:contentDescription="Mostrar u ocultar saldo"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Título Acciones -->
+    <LinearLayout
+        android:id="@+id/actionTitleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/title_gradient_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintTop_toBottomOf="@id/saldoCard"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        android:layout_marginTop="36dp">
+
+        <TextView
+            android:id="@+id/actionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tus Acciones"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#2C3E50" />
+    </LinearLayout>
+
+    <!-- Grid de acciones: Enviar, Recargar, Recibir -->
+    <GridLayout
+        android:id="@+id/actionsGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        app:layout_constraintTop_toBottomOf="@id/actionTitleLayout"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="16dp">
+
+        <!-- Enviar -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEnviar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"
+            android:background="@drawable/vibrant_card_gradient">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_send_money"
+                    android:background="@drawable/icon_gradient_send"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Enviar dinero" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enviar"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recargar -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardRecargar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"
+            android:background="@drawable/vibrant_card_gradient">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_recharge"
+                    android:background="@drawable/icon_gradient_recharge"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Recargar dinero" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recargar"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recibir -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardRecibir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="1dp"
+            android:background="@drawable/vibrant_card_gradient">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_pay_bill"
+                    android:background="@drawable/icon_gradient_receive"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Recibir dinero" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recibir"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
