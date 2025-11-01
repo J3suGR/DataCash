@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DataCash" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Theme.DataCash" parent="Base.Theme.DataCash" />
+
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenBackground">
+            @drawable/gradient_main_background
+        </item>
+
+        <item name="windowSplashScreenAnimatedIcon">
+            @drawable/ajustado
+        </item>
+
+        <item name="postSplashScreenTheme">
+            @style/Theme.DataCash
+        </item>
     </style>
 
-    <style name="Theme.DataCash" parent="Base.Theme.DataCash" />
 </resources>

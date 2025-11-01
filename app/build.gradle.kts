@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin) // <-- AÑADIDO
 }
 
 android {
@@ -33,15 +34,43 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    // AÑADIDO: Habilitar ViewBinding
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
+    // Dependencias base (las que tenías)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.core.splashscreen)
+
+    // --- DEPENDENCIAS NUEVAS AÑADIDAS ---
+
+    // Arquitectura (ViewModel)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
+    // Navegación (Fragments)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // Corrutinas
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Networking (Retrofit)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+
+    // --- FIN DE DEPENDENCIAS NUEVAS ---
+
+    // Dependencias de Test (las que tenías)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
