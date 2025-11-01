@@ -163,7 +163,8 @@
                     android:layout_marginTop="8dp"
                     android:text="Enviar"
                     android:textColor="#8572D2"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -197,7 +198,8 @@
                     android:layout_marginTop="8dp"
                     android:text="Recibir"
                     android:textColor="#8572D2"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -214,6 +216,21 @@
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="@id/layoutActions"
         app:layout_constraintTop_toBottomOf="@id/layoutActions" />
+
+    <TextView
+        android:id="@+id/btnViewMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver más"
+        android:textColor="#8572D2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="@id/layoutActions"
+        app:layout_constraintTop_toTopOf="@id/tvRecentTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tvRecentTitle" />
 
     <LinearLayout
         android:id="@+id/listTransactions"
