@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_main_background"
+    tools:context=".ui.send.SendMoneyFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/header_35_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/amountContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintBottom_toTopOf="@id/btnSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+        <TextView
+            android:id="@+id/tvAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingrese el monto"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="S/. 0"
+            android:textAppearance="@style/TextAppearance.Material3.DisplayLarge"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layoutRecipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvRecipientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Juan Perez"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/gradient_button_background"
+        android:text="Enviar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/keypadGrid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <GridLayout
+        android:id="@+id/keypadGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="1" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="2" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="3" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="4" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="5" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="6" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="7" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="8" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="9" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="." android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <Button style="@style/Widget.Material3.Button.TextButton" android:text="0" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
+        <ImageButton
+            style="@style/Widget.Material3.Button.TextButton"
+            android:src="@drawable/ic_backspace"
+            app:tint="#8572D2"
+            android:layout_columnWeight="1"
+            android:layout_height="64dp" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
