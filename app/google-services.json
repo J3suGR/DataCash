@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "702391372537",
+    "project_id": "datacash-bcf8f",
+    "storage_bucket": "datacash-bcf8f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702391372537:android:0185c89fdbbff8c9503028",
+        "android_client_info": {
+          "package_name": "com.example.datacash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3vpEbkEOfH7v-slGkKswT2HdpxBCblVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

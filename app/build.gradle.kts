@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.androidx.navigation.safeargs.kotlin) // <-- AÑADIDO
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
+
+    // --- AÑADIDO: PLUGIN DE GOOGLE SERVICES (para Firebase) ---
+    alias(libs.plugins.google.gms.services)
 }
 
 android {
@@ -34,7 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    // AÑADIDO: Habilitar ViewBinding
+    // Habilitar ViewBinding
     buildFeatures {
         viewBinding = true
     }
@@ -50,8 +53,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.splashscreen)
 
-    // --- DEPENDENCIAS NUEVAS AÑADIDAS ---
-
     // Arquitectura (ViewModel)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -64,11 +65,17 @@ dependencies {
     // Corrutinas
     implementation(libs.kotlinx.coroutines.android)
 
-    // Networking (Retrofit)
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.converter.gson)
+    // --- (RETROFIT ELIMINADO) ---
+    // implementation(libs.retrofit)
+    // implementation(libs.retrofit.converter.gson)
 
-    // --- FIN DE DEPENDENCIAS NUEVAS ---
+    // --- AÑADIDO: LIBRERÍAS DE FIREBASE ---
+    // Importa el "BoM" (Bill of Materials) para gestionar las versiones
+    implementation(platform(libs.firebase.bom))
+    // Dependencia de Autenticación (Login/Registro)
+    implementation(libs.firebase.auth.ktx)
+    // Dependencia de Base de Datos (Firestore)
+    implementation(libs.firebase.firestore.ktx)
 
     // Dependencias de Test (las que tenías)
     testImplementation(libs.junit)
