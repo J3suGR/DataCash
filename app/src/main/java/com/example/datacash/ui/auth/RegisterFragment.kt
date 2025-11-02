@@ -18,8 +18,6 @@ class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-
-    // Declara la instancia de Firebase Authentication
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
@@ -27,24 +25,18 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
-
-        // Inicializa Firebase Auth
         auth = Firebase.auth
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Botón principal de Registro
         binding.btnRegister.setOnClickListener {
-            // 1. Obtenemos los datos del formulario
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             val nombre = binding.etName.text.toString().trim()
 
-            // 2. Validaciones simples
             if (email.isEmpty() || password.isEmpty() || nombre.isEmpty()) {
                 Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -54,18 +46,16 @@ class RegisterFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            // 3. ¡Aquí ocurre la magia! Llamamos a Firebase para crear el usuario.
+            // PASO A: Crear el usuario
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // ¡Registro exitoso!
                         Log.d("RegisterFragment", "createUserWithEmail:success")
-                        Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
+
+                        // ¡ÉXITO! Ahora enviamos el email de verificación
+                        enviarEmailDeVerificacion()
 
                         // TODO: Aquí también guardaríamos el 'nombre' en la base de datos Firestore
-
-                        // Navegamos a la pantalla de Login
-                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
 
                     } else {
                         // Si el registro falla (ej. email ya existe)
@@ -75,10 +65,34 @@ class RegisterFragment : Fragment() {
                 }
         }
 
-        // Texto para ir a Login
         binding.tvGoToLogin.setOnClickListener {
+            // Esta "flecha" (action) debe existir en tu nav_graph.xml
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+    }
+
+    // **********************************
+    // ** ¡ESTA ES LA LÓGICA QUE FALTABA! **
+    // **********************************
+    private fun enviarEmailDeVerificacion() {
+        val user = auth.currentUser
+
+        // PASO B: Enviar el email de verificación
+        user?.sendEmailVerification()
+            ?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("RegisterFragment", "Email de verificación enviado.")
+                    Toast.makeText(requireContext(), "¡Registro exitoso! Revisa tu email para verificar la cuenta.", Toast.LENGTH_LONG).show()
+
+                    // Navegamos a la nueva pantalla "VerifyEmailFragment"
+                    // (Esta "flecha" debe existir en tu nav_graph.xml)
+                    findNavController().navigate(R.id.action_registerFragment_to_verifyEmailFragment)
+
+                } else {
+                    Log.e("RegisterFragment", "sendEmailVerification:failure", task.exception)
+                    Toast.makeText(requireContext(), "Error al enviar email de verificación.", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     override fun onDestroyView() {
