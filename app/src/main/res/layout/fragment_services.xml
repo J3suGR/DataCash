@@ -77,9 +77,12 @@
                     android:paddingHorizontal="24dp">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnSavedServiceLuz"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
                         app:cardBackgroundColor="@android:color/white">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -92,10 +95,13 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnSavedServiceInternet"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         app:cardCornerRadius="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
                         app:cardBackgroundColor="@android:color/white">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -134,6 +140,7 @@
                     android:rowCount="2">
 
                     <LinearLayout
+                        android:id="@+id/btnServiceLuz"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -165,6 +172,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnServiceAgua"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -196,6 +204,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnServiceWifi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -227,6 +236,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnServiceCable"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -258,6 +268,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnServiceTelefono"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -289,6 +300,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/btnServiceGas"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"

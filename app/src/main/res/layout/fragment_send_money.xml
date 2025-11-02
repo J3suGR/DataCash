@@ -142,6 +142,7 @@
         <Button style="@style/Widget.Material3.Button.TextButton" android:text="." android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
         <Button style="@style/Widget.Material3.Button.TextButton" android:text="0" android:layout_columnWeight="1" android:layout_height="64dp" android:textSize="28sp"/>
         <ImageButton
+            android:id="@+id/btnBackspace"
             style="@style/Widget.Material3.Button.TextButton"
             android:src="@drawable/ic_backspace"
             app:tint="#8572D2"
