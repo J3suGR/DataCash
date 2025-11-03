@@ -26,10 +26,10 @@ class SendSuccessFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // **********************************
-        // ** ¡AQUÍ ESTÁ LA CORRECCIÓN! **
+        // ** ¡AQUÍ ESTÁ LA CORRECCIÓN 1! **
         // ** 1. ESTABLECEMOS EL TEXTO **
         // **********************************
-        // TODO: En el futuro, recibirás este texto de la pantalla anterior.
+        // TODO: En el futuro, recibirás este texto de la pantalla anterior (argumentos de navegación).
         binding.tvSuccessSubtitle.text = "Has enviado S/. 99.00 a Juan Perez"
 
 
@@ -43,9 +43,13 @@ class SendSuccessFragment : Fragment() {
     }
 
     private fun fadeInViews() {
-        val duration = 600L // Duración del fade-in
+        val duration = 1600L // Duración del fade-in
 
-        // Hacemos aparecer el icono
+        // **********************************
+        // ** ¡AQUÍ ESTÁ LA CORRECCIÓN 2! **
+        // ** 3. ANIMAMOS EL ICONO **
+        // **********************************
+        // Hacemos aparecer el contenedor del icono
         binding.iconContainer.animate().alpha(1f).setDuration(duration).start()
 
         // Hacemos aparecer el texto y el botón

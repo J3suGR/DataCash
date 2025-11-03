@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="64dp"
         android:text="BUENOS DÍAS!"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
         android:textColor="@android:color/white"
@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="@id/cardBalance"
         app:layout_constraintTop_toBottomOf="@id/cardBalance">
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:id="@+id/btnSend"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -141,34 +141,29 @@
             android:layout_marginEnd="8dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="#FFFFFF">
+            android:elevation="4dp"
+            android:background="@drawable/gradient_button_corporate"
+            android:padding="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_upward"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_marginTop="8dp"
+                android:text="Enviar"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_arrow_upward"
-                    app:tint="#8572D2" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Enviar"
-                    android:textColor="#8572D2"
-                    android:textStyle="bold"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:id="@+id/btnReceive"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -176,32 +171,27 @@
             android:layout_marginStart="8dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="#FFFFFF">
+            android:elevation="4dp"
+            android:background="@drawable/gradient_button_corporate"
+            android:padding="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_downward"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_arrow_downward"
-                    app:tint="#8572D2" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Recibir"
-                    android:textColor="#8572D2"
-                    android:textStyle="bold"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_marginTop="8dp"
+                android:text="Recibir"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
 
     </LinearLayout>
 
