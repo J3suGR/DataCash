@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Ingrese el monto"
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/tvAmount"

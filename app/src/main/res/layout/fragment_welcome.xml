@@ -66,12 +66,12 @@
         android:layout_marginBottom="32dp"
         android:text="Registrarse"
         android:textAllCaps="false"
-        android:textColor="#8572D2"
+        android:textColor="#5225FF"
         android:textSize="18sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#8572D2" />
+        app:strokeColor="#5225FF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

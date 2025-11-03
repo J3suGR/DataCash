@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Enviaste S/. 50.00 a Juan Perez"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <TextView
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="5 min"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#1B1B1B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/layoutText" />
 

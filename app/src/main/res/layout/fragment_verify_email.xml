@@ -43,7 +43,7 @@
         android:gravity="center"
         android:text="Te enviamos un enlace de verificación a tu correo. Por favor, haz clic en él para activar tu cuenta."
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/tvVerifyTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No me llegó el correo. Reenviar."
-        android:textColor="#8572D2"
+        android:textColor="#2F2F33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
