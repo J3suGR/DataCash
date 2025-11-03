@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_main_background"
+    android:padding="24dp"
     tools:context=".ui.send.SendSuccessFragment">
 
     <LinearLayout
@@ -21,11 +22,15 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <FrameLayout
+            android:id="@+id/iconContainer"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:background="@drawable/success_icon_background">
+            android:background="@drawable/success_icon_background"
+            android:alpha="0.0"
+            tools:alpha="1.0">
 
             <ImageView
+                android:id="@+id/ivSuccessIcon"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
@@ -41,7 +46,9 @@
             android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="16dp"
+            android:alpha="0.0"
+            tools:alpha="1.0"/>
 
         <TextView
             android:id="@+id/tvSuccessSubtitle"
@@ -49,9 +56,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-            android:textColor="@android:color/darker_gray"
-            android:text="Has enviado S/. 99.00 a Juan Perez"
-            android:gravity="center"/>
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:alpha="0.0"
+            tools:alpha="1.0"
+            tools:text="Has enviado S/. 99.00 a Juan Perez"/>
 
     </LinearLayout>
 
@@ -66,6 +75,8 @@
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:alpha="0.0"
+        tools:alpha="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

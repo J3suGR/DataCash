@@ -25,14 +25,33 @@ class SendSuccessFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO: Recibir los argumentos (monto y nombre) de la pantalla anterior
-        // y mostrarlos en binding.tvSuccessSubtitle
+        // **********************************
+        // ** ¡AQUÍ ESTÁ LA CORRECCIÓN! **
+        // ** 1. ESTABLECEMOS EL TEXTO **
+        // **********************************
+        // TODO: En el futuro, recibirás este texto de la pantalla anterior.
+        binding.tvSuccessSubtitle.text = "Has enviado S/. 99.00 a Juan Perez"
+
 
         // Botón "Hecho"
         binding.btnDone.setOnClickListener {
-            // Navega de vuelta al Dashboard, limpiando el historial de "Enviar"
             findNavController().navigate(R.id.action_sendSuccessFragment_to_dashboardFragment)
         }
+
+        // 2. LLAMAMOS A LA ANIMACIÓN
+        fadeInViews()
+    }
+
+    private fun fadeInViews() {
+        val duration = 600L // Duración del fade-in
+
+        // Hacemos aparecer el icono
+        binding.iconContainer.animate().alpha(1f).setDuration(duration).start()
+
+        // Hacemos aparecer el texto y el botón
+        binding.tvSuccessTitle.animate().alpha(1f).setDuration(duration).start()
+        binding.tvSuccessSubtitle.animate().alpha(1f).setDuration(duration).start()
+        binding.btnDone.animate().alpha(1f).setDuration(duration).start()
     }
 
     override fun onDestroyView() {
