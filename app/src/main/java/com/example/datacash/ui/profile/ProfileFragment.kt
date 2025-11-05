@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.datacash.R
 import com.example.datacash.databinding.FragmentProfileBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment() {
 
@@ -26,57 +28,35 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // *** 1. NAVEGACIÓN DE LA LISTA DE OPCIONES ***
-
-        // Botón "Editar Perfil"
+        // 1. Botón "Editar Perfil"
         binding.btnEditProfile.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
-        // Botón "Seguridad"
+        // 2. Botón "Seguridad"
         binding.btnSecurity.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_securityFragment)
         }
 
-        // Botón "Ayuda y Soporte"
+        // 3. Botón "Ayuda y Soporte"
         binding.btnHelp.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_helpFragment)
         }
 
-        // *** 2. BOTÓN DE CERRAR SESIÓN ***
+        // 4. Botón "Cerrar Sesión"
         binding.btnLogout.setOnClickListener {
-            // TODO: Aquí irá la lógica para limpiar la sesión guardada
+            // Cerramos sesión en Firebase
+            Firebase.auth.signOut()
+
+            // Mostramos un mensaje
+            Toast.makeText(requireContext(), "Sesión cerrada", Toast.LENGTH_SHORT).show()
 
             // Navegamos de vuelta a la pantalla de bienvenida
             findNavController().navigate(R.id.action_profileFragment_to_welcomeFragment)
         }
 
-        // *** 3. NAVEGACIÓN DE LA BARRA INFERIOR (BottomNavigationView) ***
-
-        // Marcamos "Usuario" como seleccionado por defecto
-        binding.bottomNavigation.selectedItemId = R.id.nav_usuario
-
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    findNavController().navigate(R.id.action_profileFragment_to_dashboardFragment)
-                    true
-                }
-                R.id.nav_servicios -> {
-                    findNavController().navigate(R.id.action_profileFragment_to_servicesFragment)
-                    true
-                }
-                R.id.nav_tienda -> {
-                    findNavController().navigate(R.id.action_profileFragment_to_storeFragment)
-                    true
-                }
-                R.id.nav_usuario -> {
-                    // Ya estamos aquí, no hacemos nada
-                    true
-                }
-                else -> false
-            }
-        }
+        // (NOTA: Se eliminó todo el bloque 'bottomNavigation'
+        // porque ahora MainActivity lo maneja automáticamente)
     }
 
     override fun onDestroyView() {

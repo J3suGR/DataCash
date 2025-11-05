@@ -26,9 +26,7 @@ class StoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // *** 1. LÓGICA DE CLICS (Placeholders) ***
-
-        // Función de placeholder para los clics
+        // LÓGICA DE CLICS (Placeholders para los productos)
         val storeItemClickListener = View.OnClickListener { v ->
             val itemName = when (v.id) {
                 R.id.searchLayout -> "Buscar"
@@ -51,32 +49,8 @@ class StoreFragment : Fragment() {
         binding.btnStoreComida.setOnClickListener(storeItemClickListener)
         binding.btnStoreRegalos.setOnClickListener(storeItemClickListener)
 
-        // *** 2. NAVEGACIÓN DE LA BARRA INFERIOR ***
-
-        // Marcamos "Tienda" como seleccionado por defecto
-        binding.bottomNavigation.selectedItemId = R.id.nav_tienda
-
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    findNavController().navigate(R.id.action_storeFragment_to_dashboardFragment)
-                    true
-                }
-                R.id.nav_servicios -> {
-                    findNavController().navigate(R.id.action_storeFragment_to_servicesFragment)
-                    true
-                }
-                R.id.nav_tienda -> {
-                    // Ya estamos aquí
-                    true
-                }
-                R.id.nav_usuario -> {
-                    findNavController().navigate(R.id.action_storeFragment_to_profileFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+        // (NOTA: Se eliminó todo el bloque 'bottomNavigation' porque
+        // ahora MainActivity lo maneja automáticamente)
     }
 
     override fun onDestroyView() {

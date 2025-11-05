@@ -26,9 +26,7 @@ class ServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // *** 1. LÓGICA DE CLICS (Placeholders) ***
-
-        // Función de placeholder para los clics
+        // LÓGICA DE CLICS (Placeholders para los servicios)
         val serviceClickListener = View.OnClickListener { v ->
             val serviceName = when (v.id) {
                 R.id.btnSavedServiceLuz -> "Mis Recibos de Luz"
@@ -57,32 +55,8 @@ class ServicesFragment : Fragment() {
         binding.btnServiceGas.setOnClickListener(serviceClickListener)
         binding.btnOtherServices.setOnClickListener(serviceClickListener)
 
-        // *** 2. NAVEGACIÓN DE LA BARRA INFERIOR ***
-
-        // Marcamos "Servicios" como seleccionado por defecto
-        binding.bottomNavigation.selectedItemId = R.id.nav_servicios
-
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    findNavController().navigate(R.id.action_servicesFragment_to_dashboardFragment)
-                    true
-                }
-                R.id.nav_servicios -> {
-                    // Ya estamos aquí
-                    true
-                }
-                R.id.nav_tienda -> {
-                    findNavController().navigate(R.id.action_servicesFragment_to_storeFragment)
-                    true
-                }
-                R.id.nav_usuario -> {
-                    findNavController().navigate(R.id.action_servicesFragment_to_profileFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+        // (NOTA: Se eliminó el bloque de 'bottomNavigation' porque
+        // ahora MainActivity lo maneja automáticamente)
     }
 
     override fun onDestroyView() {
