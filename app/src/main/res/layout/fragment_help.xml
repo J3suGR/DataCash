@@ -17,6 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/tvPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayuda y Soporte"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/ivBack"
             android:layout_width="wrap_content"
@@ -28,19 +41,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/tvPageTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ayuda y Soporte"
-            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/ivBack"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/ivBack" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -102,90 +102,126 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/search_bar_background"
+                android:background="@drawable/gradient_main_complementary"
                 android:elevation="4dp">
 
-                <RelativeLayout
-                    android:id="@+id/btnFaq1"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="60dp"
-                    android:padding="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/icFaq1"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/btnFaq1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_help_outline"
-                        app:tint="#8572D2"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true"/>
+                        android:minHeight="60dp"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/icFaq1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_help_outline"
+                            app:tint="#8572D2"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¿Cómo cambio mi contraseña?"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_toEndOf="@id/icFaq1"
+                            android:layout_toStartOf="@id/arrowFaq1"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"/>
+
+                        <ImageView
+                            android:id="@+id/arrowFaq1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@android:color/darker_gray"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/contentFaq1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="¿Cómo cambio mi contraseña?"
-                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Para cambiar tu contraseña, ve a Perfil > Seguridad y sigue las instrucciones."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                         android:textColor="@android:color/black"
-                        android:layout_toEndOf="@id/icFaq1"
-                        android:layout_toStartOf="@id/arrowFaq1"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"/>
-
-                    <ImageView
-                        android:id="@+id/arrowFaq1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@android:color/darker_gray"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"/>
-                </RelativeLayout>
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+                </LinearLayout>
 
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1F000000" android:layout_marginHorizontal="16dp"/>
 
-                <RelativeLayout
-                    android:id="@+id/btnFaq2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="60dp"
-                    android:padding="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/icFaq2"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/btnFaq2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_help_outline"
-                        app:tint="#8572D2"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true"/>
+                        android:minHeight="60dp"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/icFaq2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_help_outline"
+                            app:tint="#8572D2"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¿Mi transferencia falló? Qué hacer"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_toEndOf="@id/icFaq2"
+                            android:layout_toStartOf="@id/arrowFaq2"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"/>
+
+                        <ImageView
+                            android:id="@+id/arrowFaq2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@android:color/darker_gray"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/contentFaq2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="¿Mi transferencia falló? Qué hacer"
-                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Si tu transferencia falló, primero revisa tu saldo. Si el problema persiste, contacta a soporte."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                         android:textColor="@android:color/black"
-                        android:layout_toEndOf="@id/icFaq2"
-                        android:layout_toStartOf="@id/arrowFaq2"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"/>
-
-                    <ImageView
-                        android:id="@+id/arrowFaq2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@android:color/darker_gray"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"/>
-                </RelativeLayout>
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -204,85 +240,121 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/search_bar_background"
+                android:background="@drawable/gradient_main_complementary"
                 android:elevation="4dp"
                 android:layout_marginBottom="24dp">
 
-                <RelativeLayout
-                    android:id="@+id/btnChat"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:paddingHorizontal="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/icChat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
-                        app:tint="#8572D2"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true"/>
+                    <RelativeLayout
+                        android:id="@+id/btnChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:paddingHorizontal="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/icChat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chat"
+                            app:tint="#8572D2"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chatea con nosotros"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_toEndOf="@id/icChat"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@android:color/darker_gray"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/contentChat"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Chatea con nosotros"
-                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Nuestro chat en vivo está disponible 24/7."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                         android:textColor="@android:color/black"
-                        android:layout_toEndOf="@id/icChat"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@android:color/darker_gray"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"/>
-                </RelativeLayout>
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+                </LinearLayout>
 
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1F000000" android:layout_marginHorizontal="16dp"/>
 
-                <RelativeLayout
-                    android:id="@+id/btnEmail"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:paddingHorizontal="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/icEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_email"
-                        app:tint="#8572D2"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true"/>
+                    <RelativeLayout
+                        android:id="@+id/btnEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:paddingHorizontal="16dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/icEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_email"
+                            app:tint="#8572D2"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Envíanos un Email"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_toEndOf="@id/icEmail"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@android:color/darker_gray"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/contentEmail"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Envíanos un Email"
-                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Te responderemos a soporte@datacash.com lo antes posible."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                         android:textColor="@android:color/black"
-                        android:layout_toEndOf="@id/icEmail"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@android:color/darker_gray"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"/>
-                </RelativeLayout>
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+                </LinearLayout>
 
             </LinearLayout>
 

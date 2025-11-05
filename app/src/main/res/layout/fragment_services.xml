@@ -76,14 +76,14 @@
                     android:orientation="horizontal"
                     android:paddingHorizontal="24dp">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <LinearLayout
                         android:id="@+id/btnSavedServiceLuz"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="16dp"
+                        android:background="@drawable/gradient_main_background"
+                        android:elevation="4dp"
                         android:clickable="true"
-                        android:focusable="true"
-                        app:cardBackgroundColor="@android:color/white">
+                        android:focusable="true">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -92,17 +92,17 @@
                             <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_lightbulb" app:tint="#8572D2"/>
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mi Recibo de Luz" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginTop="8dp"/>
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
 
-                    <com.google.android.material.card.MaterialCardView
+                    <LinearLayout
                         android:id="@+id/btnSavedServiceInternet"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        app:cardCornerRadius="16dp"
+                        android:background="@drawable/gradient_main_background"
+                        android:elevation="4dp"
                         android:clickable="true"
-                        android:focusable="true"
-                        app:cardBackgroundColor="@android:color/white">
+                        android:focusable="true">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                             <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_wifi" app:tint="#8572D2"/>
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Internet Hogar" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginTop="8dp"/>
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -126,12 +126,13 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"/>
 
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardBackgroundColor="@android:color/white">
+                android:orientation="vertical"
+                android:background="@drawable/gradient_main_background"
+                android:elevation="4dp">
 
                 <GridLayout
                     android:layout_width="match_parent"
@@ -332,7 +333,7 @@
                     </LinearLayout>
 
                 </GridLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnOtherServices"

@@ -30,16 +30,43 @@ class HelpFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        // Lógica de los botones (placeholders)
-        val clickListener = View.OnClickListener {
-            Toast.makeText(requireContext(), "Función no implementada", Toast.LENGTH_SHORT).show()
+        // Lógica de la barra de búsqueda (placeholder)
+        binding.searchLayout.setOnClickListener {
+            Toast.makeText(requireContext(), "Búsqueda no implementada", Toast.LENGTH_SHORT).show()
         }
 
-        binding.searchLayout.setOnClickListener(clickListener)
-        binding.btnFaq1.setOnClickListener(clickListener)
-        binding.btnFaq2.setOnClickListener(clickListener)
-        binding.btnChat.setOnClickListener(clickListener)
-        binding.btnEmail.setOnClickListener(clickListener)
+        // --- LÓGICA DE ACORDEÓN ---
+
+        // Pregunta Frecuente 1
+        binding.btnFaq1.setOnClickListener {
+            toggleAccordion(binding.contentFaq1)
+        }
+
+        // Pregunta Frecuente 2
+        binding.btnFaq2.setOnClickListener {
+            toggleAccordion(binding.contentFaq2)
+        }
+
+        // Contacto: Chat
+        binding.btnChat.setOnClickListener {
+            toggleAccordion(binding.contentChat)
+        }
+
+        // Contacto: Email
+        binding.btnEmail.setOnClickListener {
+            toggleAccordion(binding.contentEmail)
+        }
+    }
+
+    /**
+     * Función para mostrar u ocultar un TextView (efecto acordeón)
+     */
+    private fun toggleAccordion(contentView: View) {
+        if (contentView.visibility == View.GONE) {
+            contentView.visibility = View.VISIBLE
+        } else {
+            contentView.visibility = View.GONE
+        }
     }
 
     override fun onDestroyView() {
