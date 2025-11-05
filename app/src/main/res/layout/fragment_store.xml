@@ -44,143 +44,254 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="24dp">
+            android:paddingBottom="80dp"> <LinearLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/search_bar_background"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:layout_margin="24dp"
+            android:gravity="center_vertical"
+            android:elevation="4dp">
 
-            <LinearLayout
-                android:id="@+id/searchLayout"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/search_bar_background"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
-                android:layout_margin="24dp"
-                android:gravity="center_vertical"
-                android:elevation="4dp">
+                android:src="@drawable/ic_search"
+                app:tint="#8572D2"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search"
-                    app:tint="#8572D2"/>
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Buscar tarjetas de regalo, recargas..."
+                android:background="@android:color/transparent"
+                android:layout_marginStart="12dp"
+                android:maxLines="1"
+                android:inputType="text"/>
+        </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Buscar tarjetas de regalo, recargas..."
-                    android:background="@android:color/transparent"
-                    android:layout_marginStart="12dp"
-                    android:maxLines="1"
-                    android:inputType="text"/>
-            </LinearLayout>
-
-            <com.google.android.material.card.MaterialCardView
+            <FrameLayout
                 android:id="@+id/cardPromo"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginHorizontal="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:background="@drawable/gradient_main_complementary"
+                android:elevation="4dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/logo"
                     android:scaleType="centerCrop"
-                    android:alpha="0.3"/>
+                    android:alpha="0.5"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20% OFF\nEN TU PRIMERA COMPRA"
-                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:layout_margin="16dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20% OFF"
+                        android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                        android:textColor="#682DB4"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EN TU PRIMERA COMPRA"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tarjetas de Regalo Populares"
+                android:text="Populares"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"/>
+                android:layout_marginTop="32dp"/>
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:layout_margin="24dp">
+                android:layout_margin="16dp">
 
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:id="@+id/btnStoreJuegos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_main_complementary"
+                    android:elevation="4dp"
                     android:clickable="true"
                     android:focusable="true">
-                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/ic_videogame_asset" app:tint="#8572D2" android:padding="16dp" android:scaleType="fitCenter"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Juegos" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginHorizontal="12dp" android:layout_marginTop="8dp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Steam, PSN, Xbox" android:layout_marginHorizontal="12dp" android:layout_marginBottom="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:src="@drawable/ic_videogame_asset"
+                        app:tint="#682DB4"
+                        android:padding="24dp"
+                        android:scaleType="fitCenter"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Juegos"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Steam, PSN, Xbox"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="#212121"
+                            android:layout_marginTop="4dp"/>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:id="@+id/btnStoreStreaming"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_main_complementary"
+                    android:elevation="4dp"
                     android:clickable="true"
                     android:focusable="true">
-                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/ic_movie" app:tint="#8572D2" android:padding="16dp" android:scaleType="fitCenter"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Streaming" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginHorizontal="12dp" android:layout_marginTop="8dp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Netflix, Spotify" android:layout_marginHorizontal="12dp" android:layout_marginBottom="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:src="@drawable/ic_movie"
+                        app:tint="#682DB4"
+                        android:padding="24dp"
+                        android:scaleType="fitCenter"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Streaming"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Netflix, Spotify"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="#212121"
+                            android:layout_marginTop="4dp"/>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:id="@+id/btnStoreComida"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_main_complementary"
+                    android:elevation="4dp"
                     android:clickable="true"
                     android:focusable="true">
-                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/ic_fastfood" app:tint="#8572D2" android:padding="16dp" android:scaleType="fitCenter"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Comida" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginHorizontal="12dp" android:layout_marginTop="8dp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Starbucks, Uber Eats" android:layout_marginHorizontal="12dp" android:layout_marginBottom="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:src="@drawable/ic_fastfood"
+                        app:tint="#682DB4"
+                        android:padding="24dp"
+                        android:scaleType="fitCenter"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comida"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Uber Eats, Rappi"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="#212121"
+                            android:layout_marginTop="4dp"/>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:id="@+id/btnStoreRegalos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    app:cardCornerRadius="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_main_complementary"
+                    android:elevation="4dp"
                     android:clickable="true"
                     android:focusable="true">
-                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <ImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/ic_card_giftcard" app:tint="#8572D2" android:padding="16dp" android:scaleType="fitCenter"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Regalos" android:textStyle="bold" android:textColor="@android:color/black" android:layout_marginHorizontal="12dp" android:layout_marginTop="8dp"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Amazon, Google Play" android:layout_marginHorizontal="12dp" android:layout_marginBottom="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:src="@drawable/ic_card_giftcard"
+                        app:tint="#682DB4"
+                        android:padding="24dp"
+                        android:scaleType="fitCenter"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Regalos"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                            android:textColor="@android:color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amazon, Google Play"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="#212121"
+                            android:layout_marginTop="4dp"/>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
             </GridLayout>
 
