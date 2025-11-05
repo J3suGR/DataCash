@@ -34,11 +34,12 @@
         android:id="@+id/tvHeaderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="Bienvenido a \nDatacash"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
         android:textColor="@android:color/white"
         android:textStyle="bold"
+        android:lineSpacingMultiplier="1.1"
         app:layout_constraintStart_toStartOf="@id/ivLogo"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
@@ -48,48 +49,78 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:orientation="vertical"
-        android:padding="24dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gradientHeader"
-        app:layout_constraintVertical_bias="0.575">
+        app:layout_constraintVertical_bias="0.5">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="Iniciar Sesión"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
-            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="#1C1B1F"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEmail"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Email">
+            android:layout_marginTop="8dp"
+            android:hint="Email"
+            android:textColorHint="#1C1B1F"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#80FFFFFF"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxCornerRadiusTopStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusBottomEnd="28dp"
+            android:elevation="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingVertical="18dp"
+                android:textColor="#1C1B1F"
+                android:background="@android:color/transparent" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Contraseña"
-            app:passwordToggleEnabled="true">
+            android:textColorHint="#1C1B1F"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#682DB4"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#80FFFFFF"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxCornerRadiusTopStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusBottomEnd="28dp"
+            android:elevation="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:paddingVertical="18dp"
+                android:textColor="#1C1B1F"
+                android:background="@android:color/transparent" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -97,10 +128,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:text="Olvide mi contraseña"
-            android:textColor="#8572D2"
-            android:textSize="14sp" />
+            android:textColor="#682DB4"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
     </LinearLayout>
 
@@ -108,13 +142,15 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/gradient_button_background"
+        android:elevation="6dp"
         android:text="Iniciar Sesión"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tvGoToRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -124,11 +160,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:padding="8dp"
         android:text="¿No tienes cuenta? Regístrate"
-        android:textColor="#8572D2"
+        android:textColor="#682DB4"
+        android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.datacash.R
 import com.example.datacash.databinding.FragmentServicesBinding
 
@@ -26,8 +25,9 @@ class ServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // LÓGICA DE CLICS (Placeholders para los servicios)
+        // --- LÓGICA DE CLICS PARA LOS SERVICIOS ---
         val serviceClickListener = View.OnClickListener { v ->
+            // Determinamos el nombre del servicio basado en el ID del botón presionado
             val serviceName = when (v.id) {
                 R.id.btnSavedServiceLuz -> "Mis Recibos de Luz"
                 R.id.btnSavedServiceInternet -> "Mi Internet Hogar"
@@ -38,13 +38,15 @@ class ServicesFragment : Fragment() {
                 R.id.btnServiceTelefono -> "Pagar Teléfono"
                 R.id.btnServiceGas -> "Pagar Gas"
                 R.id.btnOtherServices -> "Ver Otros Servicios"
-                else -> "Servicio"
+                else -> "Servicio desconocido"
             }
-            // TODO: Navegar a la pantalla de "Pagar Servicio"
-            Toast.makeText(requireContext(), "$serviceName no implementado", Toast.LENGTH_SHORT).show()
+
+            // TODO: Aquí navegarías a la pantalla de pago específica.
+            // Por ahora, mostramos un mensaje.
+            Toast.makeText(requireContext(), "Seleccionaste: $serviceName", Toast.LENGTH_SHORT).show()
         }
 
-        // Asignar el listener a todos los botones
+        // Asignamos el mismo "oyente" a todos los botones
         binding.btnSavedServiceLuz.setOnClickListener(serviceClickListener)
         binding.btnSavedServiceInternet.setOnClickListener(serviceClickListener)
         binding.btnServiceLuz.setOnClickListener(serviceClickListener)
@@ -54,9 +56,6 @@ class ServicesFragment : Fragment() {
         binding.btnServiceTelefono.setOnClickListener(serviceClickListener)
         binding.btnServiceGas.setOnClickListener(serviceClickListener)
         binding.btnOtherServices.setOnClickListener(serviceClickListener)
-
-        // (NOTA: Se eliminó el bloque de 'bottomNavigation' porque
-        // ahora MainActivity lo maneja automáticamente)
     }
 
     override fun onDestroyView() {

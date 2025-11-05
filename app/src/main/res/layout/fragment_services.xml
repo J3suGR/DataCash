@@ -44,15 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="80dp"> <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mis Servicios"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"/>
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mis Servicios"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"/>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -79,7 +81,7 @@
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:src="@drawable/ic_lightbulb"
-                            app:tint="#682DB4"/>
+                            app:tint="#8572D2"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -104,7 +106,7 @@
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:src="@drawable/ic_wifi"
-                            app:tint="#682DB4"/>
+                            app:tint="#8572D2"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -335,6 +337,20 @@
 
                 </GridLayout>
             </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOtherServices"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Ver otros servicios"
+                android:textColor="#8572D2"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_chevron_right"
+                app:iconTint="#8572D2"
+                app:iconGravity="textEnd"
+                android:layout_marginTop="8dp"/>
 
         </LinearLayout>
     </ScrollView>
