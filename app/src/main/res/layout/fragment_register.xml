@@ -129,6 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:hint="Contraseña"
                 android:textColorHint="#1C1B1F"
                 app:passwordToggleEnabled="true"
