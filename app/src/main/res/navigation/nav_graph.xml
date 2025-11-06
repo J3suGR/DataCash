@@ -116,7 +116,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-
         <action
             android:id="@+id/action_dashboard_to_services"
             app:destination="@id/servicesFragment"
@@ -166,6 +165,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_serviceDemoFragment"
+            app:destination="@id/serviceDemoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -190,6 +196,13 @@
         <action
             android:id="@+id/action_storeFragment_to_profileFragment"
             app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_storeFragment_to_storeDemoFragment"
+            app:destination="@id/storeDemoFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -221,7 +234,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-
         <action
             android:id="@+id/action_profileFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment"
@@ -243,7 +255,6 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
-
         <action
             android:id="@+id/action_profileFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
@@ -270,7 +281,6 @@
         android:name="com.example.datacash.ui.receive.ReceiveMoneyFragment"
         android:label="fragment_receive_money"
         tools:layout="@layout/fragment_receive_money" />
-
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.example.datacash.ui.profile.EditProfileFragment"
@@ -286,7 +296,6 @@
         android:name="com.example.datacash.ui.profile.HelpFragment"
         android:label="fragment_help"
         tools:layout="@layout/fragment_help" />
-
     <fragment
         android:id="@+id/selectRecipientFragment"
         android:name="com.example.datacash.ui.send.SelectRecipientFragment"
@@ -328,5 +337,17 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
+    <fragment
+        android:id="@+id/storeDemoFragment"
+        android:name="com.example.datacash.ui.store.StoreDemoFragment"
+        android:label="fragment_store_demo"
+        tools:layout="@layout/fragment_store_demo" />
+
+    <fragment
+        android:id="@+id/serviceDemoFragment"
+        android:name="com.example.datacash.ui.services.ServiceDemoFragment"
+        android:label="fragment_service_demo"
+        tools:layout="@layout/fragment_service_demo" />
 
 </navigation>

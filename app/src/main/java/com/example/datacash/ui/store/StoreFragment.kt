@@ -26,31 +26,30 @@ class StoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // LÓGICA DE CLICS (Placeholders para los productos)
-        val storeItemClickListener = View.OnClickListener { v ->
-            val itemName = when (v.id) {
-                R.id.searchLayout -> "Buscar"
-                R.id.cardPromo -> "Ver Promoción"
-                R.id.btnStoreJuegos -> "Tienda de Juegos"
-                R.id.btnStoreStreaming -> "Tienda de Streaming"
-                R.id.btnStoreComida -> "Tienda de Comida"
-                R.id.btnStoreRegalos -> "Tienda de Regalos"
-                else -> "Item"
-            }
-            // TODO: Navegar a la pantalla de detalle del producto
-            Toast.makeText(requireContext(), "$itemName no implementado", Toast.LENGTH_SHORT).show()
+        // LÓGICA DE CLICS
+        // Listener para los botones de categoría que navegan a la Demo
+        val openDemoListener = View.OnClickListener {
+            // Navega al fragmento de demostración de la tienda.
+            // Asegúrate que el ID R.id.action_storeFragment_to_storeDemoFragment
+            // esté correctamente definido en nav_graph.xml (lo está en la revisión anterior).
+            findNavController().navigate(R.id.action_storeFragment_to_storeDemoFragment)
         }
 
-        // Asignar el listener a todos los botones
-        binding.searchLayout.setOnClickListener(storeItemClickListener)
-        binding.cardPromo.setOnClickListener(storeItemClickListener)
-        binding.btnStoreJuegos.setOnClickListener(storeItemClickListener)
-        binding.btnStoreStreaming.setOnClickListener(storeItemClickListener)
-        binding.btnStoreComida.setOnClickListener(storeItemClickListener)
-        binding.btnStoreRegalos.setOnClickListener(storeItemClickListener)
+        // Asignar el listener de navegación a los botones de productos
+        binding.btnStoreJuegos.setOnClickListener(openDemoListener)
+        binding.btnStoreStreaming.setOnClickListener(openDemoListener)
+        binding.btnStoreComida.setOnClickListener(openDemoListener)
+        binding.btnStoreRegalos.setOnClickListener(openDemoListener)
 
-        // (NOTA: Se eliminó todo el bloque 'bottomNavigation' porque
-        // ahora MainActivity lo maneja automáticamente)
+        // Listeners separados para elementos que no navegan todavía (solo Toast)
+        binding.searchLayout.setOnClickListener {
+            Toast.makeText(requireContext(), "Búsqueda no implementada", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.cardPromo.setOnClickListener {
+            Toast.makeText(requireContext(), "Promoción no disponible", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun onDestroyView() {

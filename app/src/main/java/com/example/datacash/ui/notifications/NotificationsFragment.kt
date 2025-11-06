@@ -28,12 +28,12 @@ class NotificationsFragment : Fragment() {
 
         // 1. Lógica del botón "Atrás"
         binding.ivBack.setOnClickListener {
-            // Regresa a la pantalla anterior (Dashboard)
+            // Regresa a la pantalla anterior
             findNavController().popBackStack()
         }
 
-        // 2. Lógica del botón "Leído" (placeholder)
-        binding.tvMarkAsRead.setOnClickListener {
+        // 2. Lógica del botón "Leído" (CORREGIDO: tvMarkRead en lugar de tvMarkAsRead)
+        binding.tvMarkRead.setOnClickListener {
             // TODO: Añadir lógica para marcar todas las notificaciones como leídas
             Toast.makeText(requireContext(), "Marcando todo como leído...", Toast.LENGTH_SHORT).show()
         }

@@ -2,79 +2,92 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="12dp">
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    android:background="?attr/selectableItemBackground">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardIcon"
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:cardCornerRadius="24dp"
-        app:cardBackgroundColor="#E0E0E0"
         app:cardElevation="0dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:strokeWidth="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/divider">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/ivNotificationIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_arrow_upward"
             android:layout_gravity="center"
-            app:tint="#4CAF50" />
+            android:src="@drawable/ic_notifications"
+            app:tint="#6200EA" />
     </com.google.android.material.card.MaterialCardView>
 
-    <LinearLayout
-        android:id="@+id/layoutText"
+    <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/cardIcon"
+        android:layout_marginEnd="8dp"
+        android:text="Dinero recibido"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="#1C1B1F"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/cardIcon"
-        app:layout_constraintTop_toTopOf="@id/cardIcon"
-        app:layout_constraintEnd_toStartOf="@id/tvNotificationTime">
-
-        <TextView
-            android:id="@+id/tvNotificationTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Envío Exitoso"
-            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvNotificationBody"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enviaste S/. 50.00 a Juan Perez"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="@android:color/black" />
-    </LinearLayout>
+        app:layout_constraintEnd_toStartOf="@id/tvTime"
+        app:layout_constraintTop_toTopOf="@id/cardIcon" />
 
     <TextView
-        android:id="@+id/tvNotificationTime"
+        android:id="@+id/tvBody"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:text="Juan Perez te ha enviado S/. 50.00"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="#49454F"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintEnd_toStartOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5 min"
+        android:text="2 min"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-        android:textColor="#1B1B1B"
+        android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/layoutText" />
+        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle" />
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/viewUnreadDot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:background="@drawable/success_icon_background"
+        android:backgroundTint="#6200EA"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <View
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="12dp"
-        android:background="#1F000000"
-        app:layout_constraintTop_toBottomOf="@id/cardIcon"
-        app:layout_constraintStart_toStartOf="@id/layoutText"
+        android:background="#14000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvBody"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginTop="12dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
