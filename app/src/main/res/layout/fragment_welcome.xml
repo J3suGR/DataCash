@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:contentDescription="DataCash Logo"
@@ -34,9 +34,9 @@
         android:id="@+id/tvWelcomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="BIENVENIDO,\nDataCash"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        android:layout_marginTop="32dp"
+        android:text="BIENVENIDO a\nDataCash"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/ivLogo"

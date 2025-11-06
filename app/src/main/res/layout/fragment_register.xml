@@ -11,10 +11,9 @@
     <View
         android:id="@+id/gradientHeader"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="280dp"
         android:background="@drawable/gradient_welcome_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="1.0" />
@@ -46,144 +45,142 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
         android:fillViewport="true"
         android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle"
-        app:layout_constraintBottom_toTopOf="@id/btnRegister"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="16dp">
 
         <LinearLayout
-            android:id="@+id/formContainer"
+            android:id="@+id/scrollContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:paddingHorizontal="32dp">
 
+            <LinearLayout
+                android:id="@+id/formContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Regístrate"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="#1C1B1F"
+                    android:textStyle="bold"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="24dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilName"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre Completo"
+                    android:textColorHint="#1C1B1F"
+                    app:boxBackgroundColor="#1AFFFFFF"
+                    app:boxStrokeColor="#80FFFFFF"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:paddingTop="28dp"    android:paddingBottom="12dp" android:textColor="#1C1B1F"
+                        android:background="@android:color/transparent"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Email"
+                    android:textColorHint="#1C1B1F"
+                    app:boxBackgroundColor="#1AFFFFFF"
+                    app:boxStrokeColor="#80FFFFFF"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:paddingTop="28dp"    android:paddingBottom="12dp" android:textColor="#1C1B1F"
+                        android:background="@android:color/transparent"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="48dp"
+                    android:hint="Contraseña"
+                    android:textColorHint="#1C1B1F"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#6200EA"
+                    app:boxBackgroundColor="#1AFFFFFF"
+                    app:boxStrokeColor="#80FFFFFF"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:paddingTop="28dp"    android:paddingBottom="12dp" android:textColor="#1C1B1F"
+                        android:background="@android:color/transparent"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/gradient_button_background"
+                android:text="Registrarme"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:elevation="6dp" />
+
             <TextView
+                android:id="@+id/tvGoToLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regístrate"
-                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-                android:textColor="#1C1B1F"
+                android:layout_marginBottom="32dp"
+                android:text="¿Ya tienes cuenta? Inicia Sesión"
+                android:textColor="#6200EA"
                 android:textStyle="bold"
-                android:layout_gravity="start"
-                android:layout_marginBottom="24dp"/>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilName"
-                style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre Completo"
-                android:textColorHint="#1C1B1F"
-                app:boxBackgroundColor="#1AFFFFFF"
-                app:boxStrokeColor="#80FFFFFF"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="2dp"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:paddingVertical="16dp"
-                    android:textColor="#1C1B1F"
-                    android:background="@android:color/transparent"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilEmail"
-                style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Email"
-                android:textColorHint="#1C1B1F"
-                app:boxBackgroundColor="#1AFFFFFF"
-                app:boxStrokeColor="#80FFFFFF"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="2dp"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:paddingVertical="16dp"
-                    android:textColor="#1C1B1F"
-                    android:background="@android:color/transparent"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilPassword"
-                style="@style/Widget.Material3.TextInputLayout.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Contraseña"
-                android:textColorHint="#1C1B1F"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#6200EA"
-                app:boxBackgroundColor="#1AFFFFFF"
-                app:boxStrokeColor="#80FFFFFF"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="2dp"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:paddingVertical="16dp"
-                    android:textColor="#1C1B1F"
-                    android:background="@android:color/transparent"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
+                android:textSize="16sp"
+                android:padding="8dp" />
         </LinearLayout>
     </ScrollView>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRegister"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/gradient_button_background"
-        android:text="Registrarme"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:elevation="6dp"
-        app:layout_constraintBottom_toTopOf="@id/tvGoToLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvGoToLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="¿Ya tienes cuenta? Inicia Sesión"
-        android:textColor="#6200EA"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
